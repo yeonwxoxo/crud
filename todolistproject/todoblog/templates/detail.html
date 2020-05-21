@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <title>Detail</title>
+</head>
+<body>
+    <div class="todo">
+        
+        <h2>할 일</h2>
+        <span>{{ todolist.title }}</span>
+    </div>
+    <div class="cont">
+        <h2>할 일의 내용</h2>
+        <span>{{ todolist.content }}</span>
+    </div>
+    <div class="d">
+        <h2>마감기한</h2>
+        <span>{{ todolist.deadline }} 까지</span>
+    </div>
+    <br>
+
+    <br>
+    <a href="{% url 'home' %}">홈으로</a>
+    <a href="{% url 'edit' todolist.pk %}">수정</a>
+    <a href="{% url 'delete' todolist.pk %}">삭제</a>
+</body>
+</html>

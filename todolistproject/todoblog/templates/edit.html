@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>제목</label>
+            <input type="text" name="title" value="{{ todolist.title }}" placeholder="할 일 입략"> 
+        </div>
+        <div>
+            <label>내용</label>
+            <textarea name="content" cols="30" rows="10">{{ todolist.content }}</textarea>
+        </div>
+        <button type="submit">수정하기</button>
+    </form>
+</body>
+</html>

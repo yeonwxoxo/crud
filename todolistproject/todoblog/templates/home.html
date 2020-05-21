@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <title>Todolist</title>
+</head>
+<body>
+    <div class= "title" >
+        <!-- style="background-color: lightblue;" -->
+    <h1>To Do List</h1>
+    </div>
+
+   
+    {% for todolist in todolists %}
+    <div class ="allcont">
+        <div class="tit">
+            <h3>할 일이 뭐냐면</h3>
+            <a href="{% url 'detail' todolist.pk %}">"{{ todolist.title }}"</a>
+            <br>
+        </div>   
+            
+            
+        <div class ="cont">  
+            <h4>구체적인 할일의 내용은</h4>
+            <p>{{ todolist.content }}</p>
+        </div>  
+
+        <div class="d">
+            <h4>마감기한은</h4>
+            <p>{{ todolist.deadline }}</p>
+            <br>
+        </div>
+    </div>  
+    
+    {% endfor %}
+    <br>
+    <div class="add">
+    <a href ="{% url 'new' %}">Todo list 추가</a>
+    </div>
+</body>
+</html>

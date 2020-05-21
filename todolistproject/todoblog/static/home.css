@@ -1,0 +1,104 @@
+.allcont {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.title {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    background-color: lightblue;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+  }
+
+
+  .tit {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    color: #038cfc;
+  }
+
+  .cont {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  .cont h4 {
+    color: #038cfc;
+  }
+
+
+  .d {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  .d h4 {
+    color: #038cfc;
+  }
+
+
+
+  .add {
+    display: block;
+    width: 20%;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  .add {
+    background:lightblue;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    
+  }
+  .add:hover{
+    background:#fff;
+    color:lightblue;
+    
+  }
+  .add:before,.add:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: lightblue;
+    transition:400ms ease all;
+    
+  }
+  .add:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+    
+  }
+  .add:hover:before,.add:hover:after{
+    width:100%;
+    transition:800ms ease all;
+    
+  }
+
+ 

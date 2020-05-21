@@ -1,0 +1,19 @@
+body {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    /* background-color: lightblue; */
+}
+
+.todo h2{
+    color:#038cfc;
+}
+
+.cont h2{
+    color:#038cfc;
+}
+
+.d h2{
+    color:#038cfc;
+}
