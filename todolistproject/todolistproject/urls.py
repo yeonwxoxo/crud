@@ -23,5 +23,6 @@ urlpatterns = [
     path('new/',views.new,name='new'),
     path('detail/<int:todolist_pk>',views.detail,name='detail'),
     path('edit/<int:todolist_pk>',views.edit,name="edit"),
-    path('delete/<int:todolist_pk>',views.delete,name="delete")
+    path('delete/<int:todolist_pk>',views.delete,name="delete"),
+    path('delete_comment/<int:todolist_pk>/<int:comment_pk>',views.delete_comment, name='delete_comment')
 ]

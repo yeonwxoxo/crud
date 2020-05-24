@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Todolist
+from .models import Todolist, Comment 
 import datetime
 
 
@@ -22,6 +22,13 @@ def new(request):
 def detail(request,todolist_pk):
     todolist = Todolist.objects.get(pk=todolist_pk)
 
+    if request.method =="POST":
+        Comment.objects.create(
+            post = todolist,
+            content = request.POST['content']
+        )
+        return redirect('detail', todolist_pk)
+
     return render(request, 'detail.html', {'todolist':todolist})
 
 def edit(request,todolist_pk):
@@ -41,6 +48,11 @@ def delete(request,todolist_pk):
     todolist = Todolist.objects.get(pk=todolist_pk)
     todolist.delete()
     return redirect('home')
+
+def delete_comment(request, todolist_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    comment.delete()
+    return redirect('detail', todolist_pk)
 
 
 

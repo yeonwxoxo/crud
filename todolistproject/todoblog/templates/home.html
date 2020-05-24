@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}여긴Home{% endblock title %}
+
+{%block content%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-    <title>Todolist</title>
 </head>
 <body>
     <div class= "title" >
@@ -42,3 +46,5 @@
     </div>
 </body>
 </html>
+
+{% endblock %}

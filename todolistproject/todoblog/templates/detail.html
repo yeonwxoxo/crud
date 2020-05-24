@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}여긴 Detail{% endblock title %}
+
+{%block content%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,5 +32,24 @@
     <a href="{% url 'home' %}">홈으로</a>
     <a href="{% url 'edit' todolist.pk %}">수정</a>
     <a href="{% url 'delete' todolist.pk %}">삭제</a>
+
+    <br>
+    <br>
+
+    <div>
+    {% for comment in todolist.comments.all %}
+    <li>{{ comment.content }}</li>
+    <a href="{% url 'delete_comment' todolist.pk comment.pk %}">댓글삭제</a>
+    {% endfor %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <p>[댓글]</p>
+            <input type="text" name="content" placeholder="댓글을 입력해주세요">
+            <button type="submit">댓글쓰기</button>
+        </form>
+    </div>
 </body>
 </html>
+
+{% endblock %}
